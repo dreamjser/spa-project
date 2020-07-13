@@ -1,0 +1,32 @@
+import Vue from 'vue';
+import Router from 'vue-router';
+
+import home from './home';
+import authlogin from './auth/login';
+Vue.use(Router);
+
+const router = new Router({
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    }
+
+    return {
+      x: 0,
+      y: 0
+    };
+  },
+
+  routes: [
+    ...authlogin,
+    ...home,
+  ]
+});
+
+router.afterEach(route => {
+  if (route.name) {
+    document.body.setAttribute('data-page', route.name);
+  }
+});
+
+export default router;
