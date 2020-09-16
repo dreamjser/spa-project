@@ -2,7 +2,7 @@ export default {
   auth: {
     login: {
       auth: false,
-      url: '/auth/login',
+      url: '/loanLogin.do',
     },
     logout: {
       auth: false,

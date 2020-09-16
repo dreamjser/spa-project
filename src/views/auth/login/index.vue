@@ -31,7 +31,11 @@ export default {
     tabItem,
   },
   created() {
-    this.$api.auth.login();
+    this.$api.auth.login().then(r => {
+      console.log(r, 9090);
+    }).catch(r => {
+      console.log(r, 888);
+    });
   }
 };
 </script>

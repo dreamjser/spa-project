@@ -2,7 +2,7 @@ import request from '@/common/request';
 import qs from 'qs';
 import urls from './urls';
 
-const API_URL = 'http://yapi.demo.qunar.com/mock/63572';
+const API_URL = 'http://10.1.91.135:3000/mock/9';
 const api = {};
 
 const createFormData = params => {
@@ -56,8 +56,14 @@ const createRequestFunction = o => (opts = { data: {}, config: {} }) => {
     config.data = data;
   }
 
-  return request(config).then(r => {
-    return r.data;
+  return new Promise((reslove, reject) => {
+    request(config).then(r => {
+      if(r.errorCode === '0') {
+        reslove(r.data);
+      }else{
+        reject(r.data);
+      }
+    });
   });
 };
 
