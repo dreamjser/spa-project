@@ -1,21 +1,18 @@
-# spa-project
+## 新建页面
 
-> A Vue.js project of spa
+npm run init-page xxx/xxx
 
-## Build Setup
+## 删除页面
 
-``` bash
-# install dependencies
-npm install
+npm run del-page xxx/xxx
 
-# serve with hot reload at localhost:8080
+## 本地运行
+
 npm run dev
 
-# build for production with minification
-npm run build
+## 构建
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+npm run build sit(环境变量)
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+

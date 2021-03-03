@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import home from './home';
 import authlogin from './auth/login';
+import myaccountindex from './my-account/index';
 Vue.use(Router);
 
 const router = new Router({
@@ -18,6 +19,7 @@ const router = new Router({
   },
 
   routes: [
+    ...myaccountindex,
     ...authlogin,
     ...home,
   ]
